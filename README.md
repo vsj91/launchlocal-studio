@@ -6,6 +6,7 @@ A static GitHub Pages website for selling complete local-business websites in In
 
 - A polished landing page for a ₹6,999 complete website offer.
 - Template categories for salons, cafes, clinics, retail shops, tutors, and home services.
+- Full clickable sample website demos for each template category.
 - INR pricing with ₹2,499/year renewal.
 - A request form that opens an email draft with the lead details.
 - Static HTML, CSS, and JavaScript that can run directly on GitHub Pages.
