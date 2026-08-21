@@ -1,15 +1,15 @@
 const business = {
   name: "LaunchLocal Studio",
-  type: "cafe",
-  tagline: "Premium websites that open with a moment customers remember.",
+  type: "burger",
+  tagline: "Made Fresh. Made Different.",
   phone: "+919999999999",
   whatsapp: "+919999999999",
   instagram: "https://instagram.com/",
   email: "hello@launchlocal.studio",
   address: "India",
   mapQuery: "India",
-  heroTitle: "A ₹20,000-style animated website template, built as a fast static site.",
-  heroCopy: "Use it for cafes, salons, restaurants, car services, real estate, coaching centres and more. Change one config object to switch icon, colors, content and contact details.",
+  heroTitle: "A burger-inspired website experience where every layer opens a business section.",
+  heroCopy: "The top bun, lettuce, tomato, cheese, patty and bottom bun split apart into About, Menu, Offers, Best Sellers, Reviews and Contact. The same system can later power cars, houses, coffee cups and salon concepts.",
   about: "LaunchLocal Studio creates complete websites for local businesses with domain, hosting, WhatsApp, Google Maps and basic SEO setup. This animated template is built to feel memorable without becoming slow or heavy.",
   services: [
     ["Complete Website", "Single-page premium website with sections for about, services, gallery, offers, reviews and contact.", "₹6,999"],
@@ -36,14 +36,6 @@ const business = {
   ]
 };
 
-const typeThemes = {
-  burger: { icon: "🍔", label: "Restaurant / Food", className: "type-burger" },
-  car: { icon: "🚗", label: "Automobile", className: "type-car" },
-  house: { icon: "🏠", label: "Real Estate", className: "type-house" },
-  salon: { icon: "✂️", label: "Salon", className: "type-salon" },
-  cafe: { icon: "☕", label: "Cafe", className: "type-cafe" }
-};
-
 const templateCategories = [
   ["salon", "Salon & Spa", ["Signature Salon", "Elegant Beauty Studio", "Classic Parlour", "Bold Bridal Salon", "Minimal Spa"]],
   ["cafe", "Cafe & Restaurant", ["Signature Cafe", "Elegant Bistro", "Classic Restaurant", "Bold Food Brand", "Minimal Coffee Bar"]],
@@ -54,7 +46,7 @@ const templateCategories = [
 ];
 
 const styles = ["signature", "elegant", "classic", "bold", "minimal"];
-const theme = typeThemes[business.type] || typeThemes.cafe;
+const theme = window.layerPresets[business.type] || window.layerPresets.burger;
 const phoneDigits = business.whatsapp.replace(/\D/g, "");
 
 document.body.classList.add(theme.className);
@@ -103,11 +95,30 @@ function renderGallery() {
   )).join("");
 }
 
+function renderLayerStage() {
+  const restPositions = [-78, -42, -13, 18, 48, 78];
+  document.querySelector("#layerStage").innerHTML = theme.layers.map((layer, index) => {
+    const [shape, part, section, href, x, y, r] = layer;
+    return `
+      <span class="object-layer ${shape}" style="--rest-y:${restPositions[index]}px; --x:${x}px; --y:${y}px; --r:${r}deg; --z:${120 - index * 10}px; --delay:${index * 55}ms">
+        <span class="object-shape"></span>
+        <em class="layer-label">${section}</em>
+      </span>
+    `;
+  }).join("");
+}
+
+function renderLayerNav() {
+  document.querySelector("#layerNav").innerHTML = theme.layers.map(layer => {
+    const [shape, part, section, href] = layer;
+    return `<a href="${href}"><small>${part}</small><strong>${section}</strong></a>`;
+  }).join("");
+}
+
 function hydrate() {
   setText("introType", theme.label);
   setText("introName", business.name);
   setText("introTagline", business.tagline);
-  setText("businessIcon", theme.icon);
   setText("brandIcon", theme.icon);
   setText("brandName", business.name);
   setText("heroTitle", business.heroTitle);
@@ -130,6 +141,8 @@ function hydrate() {
   renderCards("#reviewGrid", business.reviews, "review-card");
   renderGallery();
   renderTemplates();
+  renderLayerStage();
+  renderLayerNav();
 }
 
 function openExperience() {

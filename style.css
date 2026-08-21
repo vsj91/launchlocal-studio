@@ -99,14 +99,16 @@ a {
 .icon-trigger {
   position: relative;
   display: grid;
-  width: clamp(116px, 20vw, 178px);
-  height: clamp(116px, 20vw, 178px);
+  width: clamp(220px, 34vw, 360px);
+  height: clamp(220px, 34vw, 360px);
   margin: 34px 0 10px;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.16), transparent 62%),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), var(--shadow);
   cursor: pointer;
   backdrop-filter: blur(28px) saturate(1.6);
   transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
@@ -119,16 +121,241 @@ a {
 
 .icon-orbit {
   position: absolute;
-  inset: -14px;
+  inset: -18px;
   border: 1px solid color-mix(in srgb, var(--primary) 42%, transparent);
-  border-radius: 48px;
+  border-radius: 50%;
   animation: orbit 5s linear infinite;
 }
 
-.business-icon {
-  font-size: clamp(3.8rem, 9vw, 7rem);
-  filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.22));
-  transform-origin: center;
+.layer-stage {
+  position: relative;
+  width: min(280px, 78%);
+  height: min(240px, 72%);
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+
+.object-layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%) translateY(var(--rest-y, 0)) rotate(var(--rest-r, 0deg));
+  transform-style: preserve-3d;
+  transition:
+    transform 720ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    filter 420ms ease,
+    opacity 420ms ease;
+  transition-delay: var(--delay, 0ms);
+  filter: drop-shadow(0 22px 20px rgba(0, 0, 0, 0.34));
+}
+
+.object-shape {
+  display: block;
+  width: var(--w, 190px);
+  height: var(--h, 34px);
+  border-radius: 999px;
+  box-shadow: inset 0 8px 12px rgba(255, 255, 255, 0.16), inset 0 -8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.layer-label {
+  position: absolute;
+  top: calc(100% + 12px);
+  min-width: 118px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.13);
+  color: #fff;
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 950;
+  letter-spacing: 0;
+  opacity: 0;
+  transform: translateY(12px) scale(0.92);
+  backdrop-filter: blur(18px) saturate(1.4);
+  transition: opacity 360ms ease, transform 360ms ease;
+  transition-delay: calc(var(--delay, 0ms) + 260ms);
+}
+
+.top-bun .object-shape {
+  --w: 206px;
+  --h: 58px;
+  border-radius: 110px 110px 38px 38px;
+  background: linear-gradient(180deg, #ffcf73, #d78329);
+}
+
+.lettuce .object-shape {
+  --w: 216px;
+  --h: 28px;
+  background: linear-gradient(90deg, #43b943, #8ee66e, #37a93d);
+  clip-path: polygon(0 42%, 8% 14%, 19% 50%, 29% 18%, 39% 54%, 51% 16%, 63% 56%, 75% 18%, 87% 52%, 100% 25%, 100% 100%, 0 100%);
+}
+
+.tomato .object-shape {
+  --w: 192px;
+  --h: 24px;
+  background: linear-gradient(180deg, #ff665e, #d92e28);
+}
+
+.cheese .object-shape {
+  --w: 198px;
+  --h: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffd84d, #f4a900);
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 62% 70%, 42% 100%, 20% 72%, 0 100%);
+}
+
+.patty .object-shape {
+  --w: 206px;
+  --h: 42px;
+  background: linear-gradient(180deg, #6b3a22, #2e1810);
+}
+
+.bottom-bun .object-shape {
+  --w: 198px;
+  --h: 44px;
+  border-radius: 30px 30px 90px 90px;
+  background: linear-gradient(180deg, #d88935, #b86922);
+}
+
+.car-roof .object-shape,
+.car-glass .object-shape,
+.car-body .object-shape,
+.car-light .object-shape {
+  --w: 210px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 80%, #fff), var(--primary));
+}
+
+.car-roof .object-shape {
+  --h: 44px;
+  width: 150px;
+  border-radius: 70px 70px 8px 8px;
+}
+
+.car-glass .object-shape {
+  --h: 30px;
+  width: 126px;
+  background: linear-gradient(180deg, #bfe5ff, #5eb8ff);
+}
+
+.car-body .object-shape {
+  --h: 58px;
+  border-radius: 28px;
+}
+
+.car-light .object-shape {
+  --h: 20px;
+  width: 236px;
+  background: linear-gradient(90deg, #ffeaa7, var(--primary), #ffeaa7);
+}
+
+.car-wheel-front .object-shape,
+.car-wheel-back .object-shape {
+  --w: 56px;
+  --h: 56px;
+  background: radial-gradient(circle, #f8fafc 0 22%, #111 24% 58%, #333 60%);
+}
+
+.house-roof .object-shape {
+  --w: 212px;
+  --h: 96px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  clip-path: polygon(50% 0, 100% 80%, 86% 100%, 50% 38%, 14% 100%, 0 80%);
+}
+
+.house-wall .object-shape,
+.house-base .object-shape {
+  --w: 180px;
+  --h: 90px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff, #dfe7ff);
+}
+
+.house-base .object-shape {
+  --h: 26px;
+  background: var(--primary);
+}
+
+.house-window-a .object-shape,
+.house-window-b .object-shape,
+.house-door .object-shape {
+  --w: 52px;
+  --h: 52px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #bde7ff, #6ba8ff);
+}
+
+.house-door .object-shape {
+  --w: 48px;
+  --h: 76px;
+  background: linear-gradient(180deg, #805a36, #442817);
+}
+
+.scissor-blade-a .object-shape,
+.scissor-blade-b .object-shape {
+  --w: 178px;
+  --h: 24px;
+  border-radius: 90px 12px 12px 90px;
+  background: linear-gradient(180deg, #fff, #bfc7d5);
+}
+
+.scissor-blade-a .object-shape { transform: rotate(28deg); }
+.scissor-blade-b .object-shape { transform: rotate(-28deg); }
+.scissor-pivot .object-shape {
+  --w: 38px;
+  --h: 38px;
+  background: radial-gradient(circle, #fff, var(--primary));
+}
+
+.scissor-handle-a .object-shape,
+.scissor-handle-b .object-shape {
+  --w: 72px;
+  --h: 72px;
+  border: 14px solid var(--primary);
+  background: transparent;
+}
+
+.scissor-shine .object-shape {
+  --w: 150px;
+  --h: 10px;
+  background: #fff;
+}
+
+.coffee-steam-a .object-shape,
+.coffee-steam-b .object-shape {
+  --w: 38px;
+  --h: 96px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.78), transparent);
+}
+
+.coffee-lid .object-shape {
+  --w: 178px;
+  --h: 30px;
+  background: linear-gradient(180deg, #fff, #e9dccf);
+}
+
+.coffee-cup .object-shape {
+  --w: 170px;
+  --h: 118px;
+  border-radius: 20px 20px 54px 54px;
+  background: linear-gradient(180deg, #f5efe6, #b66a20);
+}
+
+.coffee-sleeve .object-shape {
+  --w: 154px;
+  --h: 42px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #2a1a10, #5a3520);
+}
+
+.coffee-saucer .object-shape {
+  --w: 200px;
+  --h: 24px;
+  background: linear-gradient(180deg, #fff, #d7cabc);
 }
 
 .hint {
@@ -151,8 +378,21 @@ a {
   transform-origin: center;
 }
 
-body.opening .business-icon {
-  animation: iconLaunch 760ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+body.opening .object-layer,
+body.open .object-layer {
+  transform:
+    translate(-50%, -50%)
+    translate3d(var(--x), var(--y), var(--z, 80px))
+    rotateX(58deg)
+    rotateZ(var(--r))
+    scale(0.86);
+  filter: drop-shadow(0 44px 26px rgba(0, 0, 0, 0.32));
+}
+
+body.opening .layer-label,
+body.open .layer-label {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 body.opening .split-panels span {
@@ -265,6 +505,46 @@ body.open .revealed-content {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+}
+
+.layer-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 660px;
+  margin-top: 24px;
+}
+
+.layer-nav a {
+  display: grid;
+  min-height: 76px;
+  align-content: center;
+  gap: 3px;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(16px);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.layer-nav a:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.layer-nav small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.layer-nav strong {
+  font-size: 0.94rem;
 }
 
 .btn {
@@ -644,7 +924,8 @@ body.open .float-whatsapp {
   .offer-grid,
   .review-grid,
   .category-library,
-  .gallery-grid {
+  .gallery-grid,
+  .layer-nav {
     grid-template-columns: 1fr;
   }
 

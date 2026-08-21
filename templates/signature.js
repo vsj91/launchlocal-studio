@@ -9,14 +9,7 @@ const typeMap = {
   coaching: "house",
   services: "car"
 };
-const themeMap = {
-  burger: { icon: "🍔", label: "Restaurant / Retail", className: "type-burger" },
-  car: { icon: "🚗", label: "Automobile / Services", className: "type-car" },
-  house: { icon: "🏠", label: "Local business", className: "type-house" },
-  salon: { icon: "✂️", label: "Salon", className: "type-salon" },
-  cafe: { icon: "☕", label: "Cafe", className: "type-cafe" }
-};
-const theme = themeMap[typeMap[categoryKey] || "cafe"];
+const theme = window.layerPresets[typeMap[categoryKey] || "cafe"];
 const phoneDigits = selected.phone.replace(/\D/g, "");
 
 const business = {
@@ -48,12 +41,24 @@ const cards = (target, items, className) => {
 const gallery = () => {
   document.querySelector("#galleryGrid").innerHTML = business.gallery.map((src, index) => `<img src="${src}" alt="${business.name} gallery image ${index + 1}">`).join("");
 };
+function renderLayerStage() {
+  const restPositions = [-78, -42, -13, 18, 48, 78];
+  document.querySelector("#layerStage").innerHTML = theme.layers.map((layer, index) => {
+    const [shape, part, section, href, x, y, r] = layer;
+    return `<span class="object-layer ${shape}" style="--rest-y:${restPositions[index]}px; --x:${x}px; --y:${y}px; --r:${r}deg; --z:${120 - index * 10}px; --delay:${index * 55}ms"><span class="object-shape"></span><em class="layer-label">${section}</em></span>`;
+  }).join("");
+}
+function renderLayerNav() {
+  document.querySelector("#layerNav").innerHTML = theme.layers.map(layer => {
+    const [shape, part, section, href] = layer;
+    return `<a href="${href}"><small>${part}</small><strong>${section}</strong></a>`;
+  }).join("");
+}
 function hydrateSignature() {
   document.title = `${business.name} | LaunchLocal Studio`;
   setText("introType", theme.label);
   setText("introName", business.name);
   setText("introTagline", business.tagline);
-  setText("businessIcon", theme.icon);
   setText("brandIcon", theme.icon);
   setText("brandName", business.name);
   setText("heroTitle", `${selected.category} website that opens with a memorable animated moment.`);
@@ -73,6 +78,8 @@ function hydrateSignature() {
   cards("#offerGrid", business.offers, "offer-card");
   cards("#reviewGrid", business.reviews, "review-card");
   gallery();
+  renderLayerStage();
+  renderLayerNav();
 }
 function openExperience() {
   if (document.body.classList.contains("open")) return;

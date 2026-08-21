@@ -37,6 +37,22 @@ Supported icon/theme types:
 - `salon`
 - `cafe`
 
+The homepage currently uses the `burger` type. The burger is built from separate HTML/CSS layers:
+
+- Top bun → About
+- Lettuce → Menu / Services
+- Tomato → Offers
+- Cheese → Best Sellers / Templates
+- Patty → Reviews
+- Bottom bun → Contact
+
+When tapped or clicked, those layers separate with a 3D floating motion and become clickable navigation cards. The same system is reused by `templates/signature.html`, where each business category selects a matching object style:
+
+- Cafe / restaurant → coffee cup or burger-style food theme
+- Salon → scissors
+- Home services / automobile → car
+- Clinic / coaching / real estate-style businesses → house
+
 ## Lead form setup
 
 GitHub Pages cannot process form submissions by itself. The current form uses a `mailto:` fallback in `script.js`.
