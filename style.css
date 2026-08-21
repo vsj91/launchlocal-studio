@@ -553,6 +553,21 @@ body.open .revealed-content {
   padding: clamp(60px, 8vw, 112px) clamp(18px, 5vw, 72px);
 }
 
+.section-block:not(.hero):not(.reviews) {
+  background: #fff;
+  color: #101318;
+}
+
+.section-block:not(.hero):not(.reviews) .kicker {
+  color: var(--primary);
+}
+
+.section-block:not(.hero):not(.reviews) .section-head p,
+.section-block:not(.hero):not(.reviews) > p,
+.section-block:not(.hero):not(.reviews) .contact p {
+  color: #626b72;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
