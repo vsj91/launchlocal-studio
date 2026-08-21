@@ -6,10 +6,36 @@ A static GitHub Pages website for selling complete local-business websites in In
 
 - A polished landing page for a ₹6,999 complete website offer.
 - Template categories for salons, cafes, clinics, retail shops, tutors, and home services.
-- Full clickable sample website demos for each template category.
+- Five clickable template options for each business category.
+- Rich production-style preview pages with hero, services, gallery, reviews, map and CTA sections.
+- A premium animated Signature template where the icon opens the full website experience.
 - INR pricing with ₹2,499/year renewal.
 - A request form that opens an email draft with the lead details.
 - Static HTML, CSS, and JavaScript that can run directly on GitHub Pages.
+
+## Reusable animated template
+
+The homepage and `templates/signature.html` use a single JavaScript configuration object for business details.
+
+In `script.js`, change:
+
+```js
+const business = {
+  name: "LaunchLocal Studio",
+  type: "cafe",
+  tagline: "Premium websites that open with a moment customers remember.",
+  phone: "+919999999999",
+  whatsapp: "+919999999999"
+};
+```
+
+Supported icon/theme types:
+
+- `burger`
+- `car`
+- `house`
+- `salon`
+- `cafe`
 
 ## Lead form setup
 

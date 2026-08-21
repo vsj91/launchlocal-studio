@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signature Template | LaunchLocal Studio</title>
+    <meta name="description" content="Animated signature website template preview for local businesses.">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../style.css">
+    <script src="template-options.js"></script>
+  </head>
+  <body>
+    <div class="site-shell" id="siteShell">
+      <section class="intro-screen" aria-label="Interactive template opening">
+        <div class="intro-bg" aria-hidden="true"></div>
+        <div class="intro-content">
+          <p class="kicker" id="introType">Signature template</p>
+          <h1 id="introName">Demo Business</h1>
+          <p id="introTagline">A premium animated website for local business enquiries.</p>
+          <button class="icon-trigger" id="iconTrigger" type="button" aria-label="Open website sections">
+            <span class="icon-orbit" aria-hidden="true"></span>
+            <span class="business-icon" id="businessIcon" aria-hidden="true">☕</span>
+          </button>
+          <p class="hint">Tap the icon to open the full template</p>
+        </div>
+        <div class="split-panels" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </section>
+
+      <header class="reveal-header" id="top">
+        <a class="brand" href="../index.html#templates"><span id="brandIcon">☕</span><strong id="brandName">Demo Business</strong></a>
+        <nav aria-label="Primary">
+          <a href="#about">About</a><a href="#services">Services</a><a href="#offers">Offers</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="revealed-content" id="content">
+        <section class="hero section-block">
+          <div>
+            <p class="kicker" id="heroKicker">Signature business website</p>
+            <h2 id="heroTitle">A premium animated local-business website.</h2>
+            <p id="heroCopy">A complete single-page site with services, gallery, offers, reviews, contact, WhatsApp and Google Maps.</p>
+            <div class="action-row"><a class="btn primary" href="#contact">Contact now</a><a class="btn secondary" id="whatsappHero" href="#">WhatsApp</a></div>
+          </div>
+          <div class="hero-card"><span class="live-pill">Signature preview</span><div class="phone-frame"><div class="mini-site"><span></span><strong id="miniName">Demo Business</strong><p id="miniTagline">Premium website preview</p><div class="mini-grid"><i></i><i></i><i></i><i></i></div></div></div></div>
+        </section>
+        <section class="section-block about" id="about"><p class="kicker">About</p><h2 id="aboutTitle">Built to make the business feel established.</h2><p id="aboutCopy"></p><div class="metrics"><article><strong>₹6,999</strong><span>complete package</span></article><article><strong>₹2,499</strong><span>annual renewal</span></article><article><strong>Mobile</strong><span>first design</span></article></div></section>
+        <section class="section-block" id="services"><div class="section-head"><div><p class="kicker">Services</p><h2 id="servicesTitle">Clear service sections for quick decisions.</h2></div><p>These cards can become menu items, treatments, packages, listings, products or repair services.</p></div><div class="card-grid" id="servicesGrid"></div></section>
+        <section class="section-block gallery" id="gallery"><p class="kicker">Gallery</p><h2>Photos that make the business feel real.</h2><div class="gallery-grid" id="galleryGrid"></div></section>
+        <section class="section-block offers" id="offers"><div class="section-head"><div><p class="kicker">Offers</p><h2>Conversion-ready promotional blocks.</h2></div><p>Use this for launch offers, seasonal packages, limited seats, discounts or featured services.</p></div><div class="offer-grid" id="offerGrid"></div></section>
+        <section class="section-block reviews" id="reviews"><p class="kicker">Reviews</p><h2>Customer trust before the contact section.</h2><div class="review-grid" id="reviewGrid"></div></section>
+        <section class="section-block contact" id="contact"><div><p class="kicker">Contact</p><h2 id="contactTitle">Ready to customize this signature template?</h2><p id="contactAddress"></p><div class="contact-actions"><a class="btn primary" id="phoneLink" href="#">Call</a><a class="btn secondary" id="whatsappLink" href="#">WhatsApp</a><a class="btn secondary" id="mapsLink" href="#">Google Maps</a><a class="btn secondary" id="instagramLink" href="#">Instagram</a><a class="btn secondary" id="emailLink" href="#">Email</a></div></div></section>
+      </main>
+      <a class="float-whatsapp" id="floatWhatsapp" href="#" aria-label="Chat on WhatsApp">WhatsApp</a>
+    </div>
+    <script src="signature.js"></script>
+  </body>
+</html>

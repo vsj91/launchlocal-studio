@@ -3,316 +3,132 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LaunchLocal Studio | ₹6,999 Websites for Local Businesses</title>
-    <meta
-      name="description"
-      content="LaunchLocal Studio builds complete ₹6,999 websites for salons, cafes, clinics, shops, tutors, and local service businesses with domain, hosting, WhatsApp, maps, and SEO setup."
-    >
+    <title>LaunchLocal Studio | Interactive Websites for Local Businesses</title>
+    <meta name="description" content="Premium animated static website template for local businesses with configurable icons, themes, WhatsApp, Google Maps and contact CTAs.">
     <meta property="og:title" content="LaunchLocal Studio">
-    <meta property="og:description" content="Complete local business websites from ₹6,999, including .com domain, hosting, Google Maps, WhatsApp, call buttons, and basic SEO setup.">
+    <meta property="og:description" content="Interactive icon-to-website templates for salons, cafes, restaurants, automobile, real estate and local businesses.">
     <meta property="og:type" content="website">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="LaunchLocal Studio home">
-        <span class="brand-mark">LL</span>
-        <span>LaunchLocal Studio</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#templates">Templates</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Offer</a>
-        <a class="nav-cta" href="#quote">Get sample</a>
-      </nav>
-    </header>
+    <div class="site-shell" id="siteShell">
+      <section class="intro-screen" aria-label="Interactive website opening">
+        <div class="intro-bg" aria-hidden="true"></div>
+        <div class="intro-content">
+          <p class="kicker" id="introType">Interactive business website</p>
+          <h1 id="introName">LaunchLocal Studio</h1>
+          <p id="introTagline">Premium websites that open with a moment customers remember.</p>
+          <button class="icon-trigger" id="iconTrigger" type="button" aria-label="Open website sections">
+            <span class="icon-orbit" aria-hidden="true"></span>
+            <span class="business-icon" id="businessIcon" aria-hidden="true">☕</span>
+          </button>
+          <p class="hint">Tap the icon to open the experience</p>
+        </div>
+        <div class="split-panels" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </section>
 
-    <main id="top">
-      <section class="hero section-band">
-        <div class="hero-copy">
-          <p class="eyebrow">Websites for salons, cafes, shops, clinics and local services</p>
-          <h1>Professional websites that help local businesses look trusted, modern, and easy to contact.</h1>
-          <p class="hero-text">
-            Your own .com domain, mobile-friendly pages, business details, gallery, Google Maps, WhatsApp and call buttons, hosting, and basic Google SEO setup.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#quote">Request sample website</a>
-            <a class="button secondary" href="#templates">See templates</a>
+      <header class="reveal-header" id="top">
+        <a class="brand" href="#top"><span id="brandIcon">☕</span><strong id="brandName">LaunchLocal Studio</strong></a>
+        <nav aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#templates">Templates</a>
+          <a href="#offers">Offers</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="revealed-content" id="content">
+        <section class="hero section-block">
+          <div>
+            <p class="kicker" id="heroKicker">Premium static website template</p>
+            <h2 id="heroTitle">A single-page website that feels custom, animated and ready for business.</h2>
+            <p id="heroCopy">Built with HTML, CSS and vanilla JavaScript. Fast enough for GitHub Pages, polished enough to sell as a custom agency website.</p>
+            <div class="action-row">
+              <a class="btn primary" href="#templates">Explore templates</a>
+              <a class="btn secondary" id="whatsappHero" href="#">WhatsApp us</a>
+            </div>
           </div>
-          <dl class="hero-stats" aria-label="Service highlights">
-            <div>
-              <dt>₹6,999</dt>
-              <dd>complete setup</dd>
+          <div class="hero-card">
+            <span class="live-pill">Live preview</span>
+            <div class="phone-frame">
+              <div class="mini-site">
+                <span></span><strong id="miniName">Demo Business</strong><p id="miniTagline">Interactive website preview</p>
+                <div class="mini-grid"><i></i><i></i><i></i><i></i></div>
+              </div>
             </div>
-            <div>
-              <dt>₹2,499/year</dt>
-              <dd>renewal and maintenance</dd>
-            </div>
-            <div>
-              <dt>WhatsApp ready</dt>
-              <dd>calls and leads</dd>
-            </div>
-          </dl>
-        </div>
-        <div class="hero-visual" aria-label="Example small business website preview">
-          <img
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
-            alt="Small business owner reviewing a website on a laptop"
-          >
-          <div class="preview-panel" aria-hidden="true">
-            <span></span>
-            <strong>Sample website ready</strong>
-            <p>Salon, cafe, clinic, retail and service templates can be customized with your photos and details.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="templates">
-        <div class="section-heading">
-          <p class="eyebrow">Real local-business templates</p>
-          <h2>Choose a website style made for your business type.</h2>
-          <p>Every template includes sections customers expect: services, photos, prices, address, Google Maps, timings, reviews, WhatsApp, and click-to-call.</p>
-        </div>
-        <div class="template-grid">
-          <a class="template-card" href="templates/salon.html">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" alt="Salon chair and mirror">
-            <div>
-              <h3>Salon & Spa</h3>
-              <p>Services, packages, stylist photos, gallery, reviews, WhatsApp booking, and location.</p>
-              <span>Best for salons, spas and beauty parlours</span>
-              <strong class="template-link">View full template</strong>
-            </div>
-          </a>
-          <a class="template-card" href="templates/cafe.html">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Cafe table with coffee and food">
-            <div>
-              <h3>Cafe & Restaurant</h3>
-              <p>Menu, offers, delivery links, opening hours, photos, maps, call button, and reviews.</p>
-              <span>Best for cafes, restaurants and bakeries</span>
-              <strong class="template-link">View full template</strong>
-            </div>
-          </a>
-          <a class="template-card" href="templates/clinic.html">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="Clinic reception area">
-            <div>
-              <h3>Clinic & Wellness</h3>
-              <p>Doctor profile, treatments, timings, appointment CTA, patient guidance, and map directions.</p>
-              <span>Best for clinics, dentists and wellness centres</span>
-              <strong class="template-link">View full template</strong>
-            </div>
-          </a>
-          <a class="template-card" href="templates/retail.html">
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80" alt="Retail shop display">
-            <div>
-              <h3>Retail Shop</h3>
-              <p>Products, collections, store photos, offers, directions, WhatsApp enquiries, and trust badges.</p>
-              <span>Best for boutiques, electronics and local stores</span>
-              <strong class="template-link">View full template</strong>
-            </div>
-          </a>
-          <a class="template-card" href="templates/coaching.html">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Students learning with a tutor">
-            <div>
-              <h3>Tuition & Coaching</h3>
-              <p>Courses, batches, results, teacher profile, admission CTA, fees enquiry, and maps.</p>
-              <span>Best for tutors, classes and coaching centres</span>
-              <strong class="template-link">View full template</strong>
-            </div>
-          </a>
-          <a class="template-card" href="templates/home-services.html">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="Local service professional cleaning a home">
-            <div>
-              <h3>Home Services</h3>
-              <p>Service areas, packages, before-after gallery, customer reviews, call and WhatsApp leads.</p>
-              <span>Best for repair, cleaning and contractor businesses</span>
-              <strong class="template-link">View full template</strong>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="section included-section" id="included">
-        <div class="section-heading">
-          <p class="eyebrow">Complete website package</p>
-          <h2>Everything your local business needs to look professional online.</h2>
-        </div>
-        <div class="included-grid">
-          <article><strong>.com domain</strong><span>Your own professional web address.</span></article>
-          <article><strong>Mobile-friendly design</strong><span>Looks clean on phones, tablets and desktops.</span></article>
-          <article><strong>Services and details</strong><span>Clear pages for what you offer, timings and location.</span></article>
-          <article><strong>Photos and gallery</strong><span>Show your shop, work, team, menu, products or results.</span></article>
-          <article><strong>Google Maps</strong><span>Help customers find your business quickly.</span></article>
-          <article><strong>WhatsApp and call buttons</strong><span>Make enquiries easy from every device.</span></article>
-          <article><strong>Basic Google SEO setup</strong><span>Titles, descriptions and local search-ready structure.</span></article>
-          <article><strong>Hosting and setup</strong><span>We handle the technical launch and yearly upkeep.</span></article>
-        </div>
-      </section>
-
-      <section class="section split" id="process">
-        <div>
-          <p class="eyebrow">Simple launch process</p>
-          <h2>Send your business details, see a sample, then go live.</h2>
-        </div>
-        <ol class="steps">
-          <li>
-            <strong>Share your business details</strong>
-            <p>Send business name, services, address, photos, phone number, WhatsApp number and preferred template.</p>
-          </li>
-          <li>
-            <strong>Review a sample website</strong>
-            <p>We show you a sample layout first, so you can see how your business could look online.</p>
-          </li>
-          <li>
-            <strong>Launch with full setup</strong>
-            <p>Your website goes live with domain, hosting, maps, WhatsApp, call buttons and basic SEO setup.</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="section pricing" id="pricing">
-        <div class="section-heading">
-          <p class="eyebrow">Clear pricing in rupees</p>
-          <h2>Complete website, domain, hosting and setup for ₹6,999.</h2>
-          <p>No confusing agency packages. A focused website for local businesses that need calls, visits, bookings and WhatsApp leads.</p>
-        </div>
-        <div class="pricing-grid">
-          <article>
-            <h3>Sample Preview</h3>
-            <p class="price">Free</p>
-            <p>See a sample website style before you decide.</p>
-          </article>
-          <article class="featured">
-            <h3>Complete Website</h3>
-            <p class="price">₹6,999</p>
-            <p>.com domain, mobile website, services, gallery, maps, WhatsApp, call buttons, SEO basics and hosting setup.</p>
-          </article>
-          <article>
-            <h3>Annual Renewal</h3>
-            <p class="price">₹2,499/year</p>
-            <p>Domain, hosting and basic website maintenance after the first year.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section outreach-section">
-        <div class="outreach-card">
-          <p class="eyebrow">Message you can send</p>
-          <h2>For business owners without a website.</h2>
-          <p>Hi! I found your business on Google Maps and noticed you may not have a website.</p>
-          <p>I create professional websites for local businesses.</p>
-          <p><strong>Complete Website - ₹6,999</strong></p>
-          <ul class="offer-list">
-            <li>Your own .com domain</li>
-            <li>Mobile-friendly website</li>
-            <li>Services and business details</li>
-            <li>Photos/gallery</li>
-            <li>Google Maps</li>
-            <li>WhatsApp and call buttons</li>
-            <li>Basic Google SEO setup</li>
-            <li>Hosting and complete setup</li>
-          </ul>
-          <p>Annual renewal: ₹2,499/year, including domain, hosting and website maintenance.</p>
-          <p>If you are interested, I can show you a sample website first.</p>
-        </div>
-      </section>
-
-      <section class="section quote-section" id="quote">
-        <div class="quote-intro">
-          <p class="eyebrow">Request a sample</p>
-          <h2>Tell us about your business.</h2>
-          <p>
-            Share a few details and we will prepare the right template recommendation and next steps for your website.
-          </p>
-          <div class="estimate-box" aria-live="polite">
-            <span>Package estimate</span>
-            <strong id="estimate">₹6,999</strong>
+        <section class="section-block about" id="about">
+          <p class="kicker">About</p>
+          <h2 id="aboutTitle">Designed for local businesses that need trust fast.</h2>
+          <p id="aboutCopy">Customers decide quickly. This template gives them the essentials immediately: who you are, what you offer, why they should trust you and how to contact you.</p>
+          <div class="metrics">
+            <article><strong>400-800ms</strong><span>signature reveal</span></article>
+            <article><strong>0</strong><span>framework dependency</span></article>
+            <article><strong>100%</strong><span>static hosting ready</span></article>
           </div>
-        </div>
-        <form class="quote-form" id="quoteForm" action="" method="post">
-          <div class="field-row">
-            <label>
-              Name
-              <input name="name" autocomplete="name" required>
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" autocomplete="email" required>
-            </label>
-          </div>
-          <label>
-            Business name
-            <input name="business" autocomplete="organization" required>
-          </label>
-          <div class="field-row">
-            <label>
-              Business type
-              <select name="business_type" required>
-                <option value="">Select one</option>
-                <option>Salon, spa or beauty parlour</option>
-                <option>Restaurant or cafe</option>
-                <option>Clinic, dentist or wellness centre</option>
-                <option>Retail shop</option>
-                <option>Tuition or coaching centre</option>
-                <option>Home service or contractor</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>
-              Preferred template
-              <select name="template" required>
-                <option>Salon & Spa</option>
-                <option>Cafe & Restaurant</option>
-                <option>Clinic & Wellness</option>
-                <option>Retail Shop</option>
-                <option>Tuition & Coaching</option>
-                <option>Home Services</option>
-                <option>Not sure yet</option>
-              </select>
-            </label>
-          </div>
-          <div class="field-row">
-            <label>
-              Pages needed
-              <select name="pages" id="pages">
-                <option value="standard" selected>Standard business website</option>
-                <option value="one-page">One-page quick site</option>
-                <option value="catalog">Product or service catalogue</option>
-                <option value="custom">Custom pages needed</option>
-              </select>
-            </label>
-            <label>
-              Timeline
-              <select name="timeline">
-                <option>As soon as possible</option>
-                <option>2-4 weeks</option>
-                <option>1-2 months</option>
-                <option>Just exploring</option>
-              </select>
-            </label>
-          </div>
-          <fieldset>
-            <legend>Features</legend>
-            <label><input type="checkbox" name="features" value="Booking"> Booking</label>
-            <label><input type="checkbox" name="features" value="WhatsApp"> WhatsApp</label>
-            <label><input type="checkbox" name="features" value="Google Maps"> Google Maps</label>
-            <label><input type="checkbox" name="features" value="Gallery"> Gallery</label>
-          </fieldset>
-          <label>
-            Project details
-            <textarea name="details" rows="5" placeholder="Share your business location, services, current Google Maps link, WhatsApp number, and any sample website you like."></textarea>
-          </label>
-          <button class="button primary full" type="submit">Request sample website</button>
-          <p class="form-note" id="formNote">Your email app will open with the request details.</p>
-        </form>
-      </section>
-    </main>
+        </section>
 
-    <footer class="site-footer">
-      <p>LaunchLocal Studio</p>
-      <a href="#quote">Request sample website</a>
-    </footer>
+        <section class="section-block" id="services">
+          <div class="section-head">
+            <div><p class="kicker">Services</p><h2 id="servicesTitle">Complete sections with real business content.</h2></div>
+            <p>Use these cards for services, products, menu items, packages, vehicles, listings or offers.</p>
+          </div>
+          <div class="card-grid" id="servicesGrid"></div>
+        </section>
 
+        <section class="section-block" id="templates">
+          <div class="section-head">
+            <div><p class="kicker">Template library</p><h2>Five premium options for every category.</h2></div>
+            <p>Each Signature option opens the animated version. Other options show the rich standard preview system.</p>
+          </div>
+          <div class="category-library" id="categoryLibrary"></div>
+        </section>
+
+        <section class="section-block gallery" id="gallery">
+          <p class="kicker">Gallery</p>
+          <h2>Image-led sections for ambience, proof and products.</h2>
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+
+        <section class="section-block offers" id="offers">
+          <div class="section-head">
+            <div><p class="kicker">Offers</p><h2>Promotions that look premium, not noisy.</h2></div>
+            <p>Highlight launch offers, seasonal packages, discounts, limited seats or featured products.</p>
+          </div>
+          <div class="offer-grid" id="offerGrid"></div>
+        </section>
+
+        <section class="section-block reviews" id="reviews">
+          <p class="kicker">Reviews</p>
+          <h2>Trust-building testimonials with smooth reveal animations.</h2>
+          <div class="review-grid" id="reviewGrid"></div>
+        </section>
+
+        <section class="section-block contact" id="contact">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2 id="contactTitle">Ready to turn this into your business website?</h2>
+            <p id="contactAddress">Domain, hosting, WhatsApp, Google Maps and basic SEO setup included.</p>
+            <div class="contact-actions">
+              <a class="btn primary" id="phoneLink" href="#">Call</a>
+              <a class="btn secondary" id="whatsappLink" href="#">WhatsApp</a>
+              <a class="btn secondary" id="mapsLink" href="#">Google Maps</a>
+              <a class="btn secondary" id="instagramLink" href="#">Instagram</a>
+              <a class="btn secondary" id="emailLink" href="#">Email</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <a class="float-whatsapp" id="floatWhatsapp" href="#" aria-label="Chat on WhatsApp">WhatsApp</a>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
