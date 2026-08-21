@@ -1,4 +1,19 @@
 window.layerPresets = {
+  studio: {
+    icon: "▦",
+    label: "Premium Website Templates",
+    className: "type-studio",
+    title: "Templates That Open Like Magic",
+    restPositions: [-88, -54, -20, 14, 48, 82],
+    layers: [
+      ["site-slice-hero", "Hero section", "Salon", "#templates", 0, -330, -2],
+      ["site-slice-nav", "Navigation", "Cafe", "#templates", 0, -238, 2],
+      ["site-slice-card", "Service cards", "Clinic", "#templates", 0, -146, -1],
+      ["site-slice-gallery", "Gallery", "Retail", "#templates", 0, -54, 1],
+      ["site-slice-review", "Reviews", "Coaching", "#templates", 0, 38, -2],
+      ["site-slice-contact", "Contact CTA", "Services", "#templates", 0, 130, 2]
+    ]
+  },
   burger: {
     icon: "🍔",
     label: "Restaurant / Food",

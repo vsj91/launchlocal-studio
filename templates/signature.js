@@ -11,6 +11,38 @@ const typeMap = {
 };
 const theme = window.layerPresets[typeMap[categoryKey] || "cafe"];
 const phoneDigits = selected.phone.replace(/\D/g, "");
+const categoryOffers = {
+  salon: [
+    ["Bridal Trial Week", "Book a trial session and adjust the final bridal look before the event.", "Limited slots"],
+    ["Hair Spa Combo", "Hair spa with wash, blow dry and consultation for damaged hair.", "Save 20%"],
+    ["Glow Package", "Cleanup, detan and face massage for party-ready skin.", "From ₹1,499"]
+  ],
+  cafe: [
+    ["Coffee + Dessert", "Any cold coffee with brownie sundae for two.", "₹499"],
+    ["Weekend Brunch", "Cafe platter, drink and dessert combo for dine-in guests.", "₹399"],
+    ["Student Hour", "Show student ID for weekday beverage offers.", "15% off"]
+  ],
+  clinic: [
+    ["Family Checkup", "Basic consultation and vitals check for two family members.", "This week"],
+    ["Health Screening", "Blood tests, BP check and report review appointment.", "From ₹1,499"],
+    ["Follow-up Slot", "Priority follow-up booking for existing patients.", "Available"]
+  ],
+  retail: [
+    ["New Arrivals", "Fresh seasonal collection with WhatsApp catalogue support.", "Just in"],
+    ["Festival Bundle", "Pair clothing and accessories for a complete occasion look.", "Up to 30% off"],
+    ["Gift Picks", "Curated accessories and gifting items ready for pickup.", "From ₹299"]
+  ],
+  coaching: [
+    ["Free Demo Class", "Attend one demo lecture before choosing the batch.", "Book now"],
+    ["Board Prep Batch", "Focused revision, tests and doubt-solving for exam season.", "Limited seats"],
+    ["Parent Review", "Monthly progress update and study plan discussion.", "Included"]
+  ],
+  services: [
+    ["Same-day Visit", "Fast callback for urgent plumbing, AC and cleaning enquiries.", "Available"],
+    ["AC Service Combo", "Inspection, filter cleaning and performance check.", "From ₹699"],
+    ["Deep Clean Slot", "Kitchen, bathroom and sofa deep-cleaning appointments.", "Weekend slots"]
+  ]
+};
 
 const business = {
   name: `Signature ${selected.category}`,
@@ -24,11 +56,7 @@ const business = {
   mapQuery: selected.city,
   services: selected.services,
   gallery: selected.gallery,
-  offers: [
-    ["Complete Website", ".com domain, hosting, WhatsApp, Google Maps and setup.", "₹6,999"],
-    ["Annual Renewal", "Domain, hosting and basic website maintenance.", "₹2,499/year"],
-    ["Sample Preview", "See the look before the final customer website is built.", "Free"]
-  ],
+  offers: categoryOffers[categoryKey] || categoryOffers.cafe,
   reviews: selected.reviews.map((review, index) => [review, `Customer ${index + 1}`])
 };
 

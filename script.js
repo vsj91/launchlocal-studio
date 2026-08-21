@@ -1,15 +1,16 @@
 const business = {
   name: "LaunchLocal Studio",
-  type: "burger",
-  tagline: "Made Fresh. Made Different.",
+  type: "studio",
+  tagline: "Premium websites for salons, cafes, clinics, shops, tutors and local services.",
+  revealTarget: "#templates",
   phone: "+919999999999",
   whatsapp: "+919999999999",
   instagram: "https://instagram.com/",
   email: "hello@launchlocal.studio",
   address: "India",
   mapQuery: "India",
-  heroTitle: "A burger-inspired website experience where every layer opens a business section.",
-  heroCopy: "The top bun, lettuce, tomato, cheese, patty and bottom bun split apart into About, Menu, Offers, Best Sellers, Reviews and Contact. The same system can later power cars, houses, coffee cups and salon concepts.",
+  heroTitle: "Choose a ready premium template and turn a local business into a website customers trust.",
+  heroCopy: "The homepage opens into the full template library. Each category has five polished options, and every Signature template keeps the memorable animated object reveal for that business.",
   about: "LaunchLocal Studio creates complete websites for local businesses with domain, hosting, WhatsApp, Google Maps and basic SEO setup. This animated template is built to feel memorable without becoming slow or heavy.",
   services: [
     ["Complete Website", "Single-page premium website with sections for about, services, gallery, offers, reviews and contact.", "₹6,999"],
@@ -96,7 +97,7 @@ function renderGallery() {
 }
 
 function renderLayerStage() {
-  const restPositions = [-78, -42, -13, 18, 48, 78];
+  const restPositions = theme.restPositions || [-78, -42, -13, 18, 48, 78];
   document.querySelector("#layerStage").innerHTML = theme.layers.map((layer, index) => {
     const [shape, part, section, href, x, y, r] = layer;
     return `
@@ -151,7 +152,7 @@ function openExperience() {
   window.setTimeout(() => {
     document.body.classList.add("open");
     document.body.classList.remove("opening");
-    document.querySelector("#content").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector(business.revealTarget || "#content").scrollIntoView({ behavior: "smooth", block: "start" });
   }, 920);
 }
 
