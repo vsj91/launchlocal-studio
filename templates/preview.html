@@ -6,7 +6,7 @@
     <title>Template Preview | LaunchLocal Studio</title>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../template-demo.css">
-    <script src="template-options.js"></script>
+    <script src="template-options.js?v=salon-premium-copy"></script>
   </head>
   <body>
     <header class="demo-header">
@@ -17,9 +17,10 @@
     <script>
       const { category, style, categoryKey, styleKey } = getTemplate();
       document.body.className = `${category.accent} style-${styleKey}`;
-      const brand = `${style[0]} ${category.category}`;
+      const brand = category.brand || `${style[0]} ${category.category}`;
+      const landing = category.landing || {};
       document.title = `${brand} Template | LaunchLocal Studio`;
-      document.querySelector("#brandMark").textContent = category.category.replace(/&/g, "").split(" ").filter(Boolean).map(word => word[0]).join("").slice(0, 2);
+      document.querySelector("#brandMark").textContent = brand.replace(/&/g, "").split(" ").filter(Boolean).map(word => word[0]).join("").slice(0, 2);
       document.querySelector("#brandName").textContent = brand;
 
       const serviceCards = category.services.map(item => `<article><h3>${item[0]}</h3><p>${item[1]}</p><strong>${item[2]}</strong></article>`).join("");
@@ -27,80 +28,88 @@
       const reviews = category.reviews.map((review, index) => `<article><p>“${review}”</p><strong>Customer ${index + 1}</strong></article>`).join("");
       const map = `https://www.google.com/maps?q=${encodeURIComponent(category.city)}&output=embed`;
       const phoneDigits = category.phone.replace(/\D/g, "");
+      const proofItems = landing.proof || ["Mobile ready", "Google Maps", "WhatsApp CTA", "SEO sections"];
+      const heroInfo = landing.heroInfo || ["Template option", `${style[0]} layout`, `Designed for ${category.category.toLowerCase()} businesses in India.`];
+      const metrics = landing.metrics || [
+        ["5+", "core content sections"],
+        ["6", "ready content sections"],
+        ["Mobile", "first layout"],
+        ["1 week", "typical launch window"]
+      ];
+      const checklist = landing.checklist || [
+        "Strong hero section with immediate contact actions",
+        "Service, price and package sections for quick decisions",
+        "Photo gallery, trust metrics and customer reviews",
+        "Location, map, hours and mobile-friendly call buttons",
+        "Room for FAQs, offers, business story and team details"
+      ];
+      const features = landing.features || [
+        ["Business Story", "Introduce the owner, team, experience and what makes the business trustworthy.", "About section"],
+        ["Offer Banner", "Promote seasonal discounts, new launches, packages or admission notices.", "Campaign ready"],
+        ["FAQ Section", "Answer common questions about pricing, timings, appointments, visits and service areas.", "Reduces calls"]
+      ];
 
       document.querySelector("#previewRoot").innerHTML = `
         <section class="demo-hero">
           <div class="demo-copy">
-            <p class="demo-eyebrow">${style[0]} template for ${category.category}</p>
-            <h1>A production-ready ${category.category.toLowerCase()} website with premium sample content.</h1>
-            <p>${style[1]} This preview includes realistic sections, CTAs, trust proof, service details, visuals, reviews, map and mobile-first contact actions.</p>
+            <p class="demo-eyebrow">${landing.eyebrow || `${style[0]} template for ${category.category}`}</p>
+            <h1>${landing.headline || `A polished ${category.category.toLowerCase()} website built around calls, trust and quick enquiries.`}</h1>
+            <p>${landing.intro || `${style[1]} This preview includes realistic sections, CTAs, trust proof, service details, visuals, reviews, map and mobile-first contact actions.`}</p>
             <div class="demo-actions">
-              <a class="demo-button" href="tel:${category.phone}">Call now</a>
-              <a class="demo-button ghost" href="https://wa.me/${phoneDigits}">WhatsApp enquiry</a>
+              <a class="demo-button" href="tel:${category.phone}">${landing.primaryCta || "Call now"}</a>
+              <a class="demo-button ghost" href="https://wa.me/${phoneDigits}">${landing.secondaryCta || "WhatsApp enquiry"}</a>
             </div>
             <ul class="demo-proof">
-              <li>Mobile ready</li>
-              <li>Google Maps</li>
-              <li>WhatsApp CTA</li>
-              <li>SEO sections</li>
+              ${proofItems.map(item => `<li>${item}</li>`).join("")}
             </ul>
           </div>
           <div class="demo-hero-card">
             <img src="${category.heroImage}" alt="${category.category} hero preview">
-            <div class="hero-info"><span>Template option</span><strong>${style[0]} layout</strong><span>Designed for ${category.category.toLowerCase()} businesses in India.</span></div>
+            <div class="hero-info"><span>${heroInfo[0]}</span><strong>${heroInfo[1]}</strong><span>${heroInfo[2]}</span></div>
           </div>
         </section>
         <section class="metric-strip">
-          <div><strong>5+</strong><span>core content sections</span></div>
-          <div><strong>6</strong><span>ready content sections</span></div>
-          <div><strong>Mobile</strong><span>first layout</span></div>
-          <div><strong>1 week</strong><span>typical launch window</span></div>
+          ${metrics.map(item => `<div><strong>${item[0]}</strong><span>${item[1]}</span></div>`).join("")}
         </section>
         <section class="demo-section" id="services">
-          <div class="section-top"><div><p class="demo-eyebrow">Services and offer blocks</p><h2>Detailed content that feels like a real business website.</h2></div><p>Each card can be replaced with your actual services, products, packages, timings and prices.</p></div>
+          <div class="section-top"><div><p class="demo-eyebrow">${landing.servicesEyebrow || "Services and offer blocks"}</p><h2>${landing.servicesTitle || "Detailed content that feels like a real business website."}</h2></div><p>${landing.servicesText || "Each card can be replaced with your actual services, products, packages, timings and prices."}</p></div>
           <div class="demo-grid">${serviceCards}</div>
         </section>
         <section class="demo-section showcase">
           <div>
-            <p class="demo-eyebrow">Conversion structure</p>
-            <h2>Built to convert local search traffic into calls and enquiries.</h2>
+            <p class="demo-eyebrow">${landing.showcaseEyebrow || "Conversion structure"}</p>
+            <h2>${landing.showcaseTitle || "Built to convert local search traffic into calls and enquiries."}</h2>
             <ul class="check-list">
-              <li>Strong hero section with immediate contact actions</li>
-              <li>Service, price and package sections for quick decisions</li>
-              <li>Photo gallery, trust metrics and customer reviews</li>
-              <li>Location, map, hours and mobile-friendly call buttons</li>
-              <li>Room for FAQs, offers, business story and team details</li>
+              ${checklist.map(item => `<li>${item}</li>`).join("")}
             </ul>
           </div>
           <img src="${category.gallery[0]}" alt="${category.category} showcase">
         </section>
         <section class="demo-section feature-grid-section">
-          <p class="demo-eyebrow">Website sections included</p>
-          <h2>More than a landing page. A complete small-business presence.</h2>
+          <p class="demo-eyebrow">${landing.sectionsEyebrow || "Website sections included"}</p>
+          <h2>${landing.sectionsTitle || "More than a landing page. A complete small-business presence."}</h2>
           <div class="feature-grid">
-            <article><h3>Business Story</h3><p>Introduce the owner, team, experience and what makes the business trustworthy.</p><strong>About section</strong></article>
-            <article><h3>Offer Banner</h3><p>Promote seasonal discounts, new launches, packages or admission notices.</p><strong>Campaign ready</strong></article>
-            <article><h3>FAQ Section</h3><p>Answer common questions about pricing, timings, appointments, visits and service areas.</p><strong>Reduces calls</strong></article>
+            ${features.map(item => `<article><h3>${item[0]}</h3><p>${item[1]}</p><strong>${item[2]}</strong></article>`).join("")}
           </div>
         </section>
         <section class="demo-section" id="gallery">
-          <p class="demo-eyebrow">Gallery</p>
-          <h2>Visual sections for products, space, work quality and ambience.</h2>
+          <p class="demo-eyebrow">${landing.galleryEyebrow || "Gallery"}</p>
+          <h2>${landing.galleryTitle || "Visual sections for products, space, work quality and ambience."}</h2>
           <div class="demo-gallery">${gallery}</div>
         </section>
         <section class="demo-section" id="reviews">
           <p class="demo-eyebrow">Customer reviews</p>
-          <h2>Social proof placed before the final contact section.</h2>
+          <h2>${landing.reviewsTitle || "Social proof placed before the final contact section."}</h2>
           <div class="review-grid">${reviews}</div>
         </section>
         <section class="demo-section demo-contact" id="contact">
-          <div><p class="demo-eyebrow">Location and contact</p><h2>${category.city}</h2><p>Replace with your real address, timings, phone number, Google Maps link and WhatsApp number.</p><div class="demo-actions"><a class="demo-button" href="tel:${category.phone}">Call now</a><a class="demo-button ghost" href="https://wa.me/${phoneDigits}">WhatsApp</a></div></div>
+          <div><p class="demo-eyebrow">${landing.contactEyebrow || "Location and contact"}</p><h2>${category.city}</h2><p>${landing.contactText || "Replace with your real address, timings, phone number, Google Maps link and WhatsApp number."}</p><div class="demo-actions"><a class="demo-button" href="tel:${category.phone}">Call now</a><a class="demo-button ghost" href="https://wa.me/${phoneDigits}">WhatsApp</a></div></div>
           <iframe title="Sample Google Map" src="${map}"></iframe>
         </section>
         <section class="demo-section final-cta">
-          <p class="demo-eyebrow">Use this option</p>
-          <h2>Want the ${style[0]} ${category.category} template?</h2>
-          <p class="wide-copy">We can customize this exact structure with your logo, photos, services, reviews, domain, hosting, SEO basics, WhatsApp and Google Maps.</p>
+          <p class="demo-eyebrow">${landing.finalEyebrow || "Use this option"}</p>
+          <h2>${landing.finalTitle || `Want the ${style[0]} ${category.category} template?`}</h2>
+          <p class="wide-copy">${landing.finalText || "We can customize this exact structure with your logo, photos, services, reviews, domain, hosting, SEO basics, WhatsApp and Google Maps."}</p>
           <div class="demo-actions"><a class="demo-button" href="../index.html#quote">Request this template</a><a class="demo-button ghost" href="../index.html#templates">View more options</a></div>
         </section>
       `;

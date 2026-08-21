@@ -83,6 +83,11 @@ a {
 }
 
 .demo-hero {
+  padding-top: clamp(36px, 5vw, 68px);
+  padding-bottom: clamp(42px, 6vw, 76px);
+}
+
+.demo-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
   align-items: center;
@@ -126,12 +131,16 @@ a {
 
 .demo-hero h1,
 .demo-section h2 {
-  max-width: 820px;
+  max-width: 760px;
   margin: 0;
-  font-size: clamp(3.2rem, 8vw, 8rem);
-  line-height: 1;
+  font-size: clamp(2.8rem, 6.7vw, 6.4rem);
+  line-height: 0.96;
   letter-spacing: 0;
   font-weight: 950;
+}
+
+.demo-hero h1 {
+  font-size: clamp(2.55rem, 5.7vw, 5.45rem);
 }
 
 .demo-section h2 {
@@ -142,8 +151,8 @@ a {
 .wide-copy {
   max-width: 660px;
   color: var(--muted);
-  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.34vw, 1.18rem);
+  line-height: 1.62;
 }
 
 .demo-eyebrow {
@@ -157,8 +166,8 @@ a {
 
 .demo-hero img {
   width: 100%;
-  height: min(74vh, 760px);
-  min-height: 460px;
+  height: min(68vh, 700px);
+  min-height: 420px;
   object-fit: cover;
   border-radius: 32px;
   box-shadow: var(--shadow);
@@ -398,6 +407,34 @@ a {
   --accent: #ff2d8d;
   --accent-dark: #c71968;
   --paper: #fff6fa;
+}
+
+.salon-theme .demo-hero {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 45, 141, 0.18), transparent 32%),
+    radial-gradient(circle at 12% 86%, rgba(205, 180, 219, 0.28), transparent 28%),
+    linear-gradient(135deg, #fff 0%, #fff7fb 48%, #f8efff 100%);
+}
+
+.salon-theme .demo-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: 42px;
+  background: linear-gradient(135deg, rgba(255, 45, 141, 0.28), rgba(255, 214, 235, 0));
+  filter: blur(18px);
+}
+
+.salon-theme .hero-info {
+  border-color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 248, 252, 0.88);
+}
+
+.salon-theme .metric-strip div {
+  background:
+    linear-gradient(180deg, rgba(255, 45, 141, 0.08), rgba(255, 255, 255, 0.9)),
+    #fff;
 }
 
 .cafe-theme {

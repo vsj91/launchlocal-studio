@@ -1,6 +1,7 @@
 const categoryData = {
   salon: {
     category: "Salon & Spa",
+    brand: "LuxeBloom Salon & Spa",
     accent: "salon-theme",
     city: "Indiranagar, Bengaluru",
     phone: "+919876543210",
@@ -11,12 +12,53 @@ const categoryData = {
       "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=900&q=80"
     ],
     services: [
-      ["Haircut & Styling", "Women, men and kids styling with wash, cut and blow dry.", "From ₹499"],
-      ["Facial & Cleanup", "Glow, detan, bridal and skin-care packages.", "From ₹799"],
-      ["Bridal Makeup", "Makeup, hair styling, draping and touch-up support.", "From ₹7,999"],
-      ["Hair Spa", "Repair, smoothing and nourishment treatments.", "From ₹1,499"]
+      ["Signature Haircut", "Consultation, wash, precision cut and finish styled for your face shape.", "From ₹699"],
+      ["Glow Facial Ritual", "Cleanse, exfoliation, massage and mask for brighter, calmer skin.", "From ₹1,299"],
+      ["Bridal Beauty Studio", "Makeup, hair styling, draping and touch-up planning for wedding events.", "From ₹9,999"],
+      ["Keratin & Hair Spa", "Repair treatments for frizz control, shine and stronger-looking hair.", "From ₹1,999"]
     ],
-    reviews: ["Clean salon, beautiful interiors and easy WhatsApp booking.", "The bridal package section made comparison simple.", "Found the location and prices without calling twice."]
+    reviews: ["The space felt premium from the first visit and booking on WhatsApp was effortless.", "My bridal trial, makeup and hair plan were explained clearly before the event.", "The website showed prices, photos and location, so I booked without calling twice."],
+    landing: {
+      eyebrow: "Luxury salon and bridal studio in Indiranagar",
+      headline: "Polished hair. Glowing skin. Bridal confidence.",
+      intro: "A premium salon website should feel like the first appointment: elegant, reassuring and easy to book. This layout presents services, prices, bridal expertise, gallery proof, reviews and WhatsApp booking without sounding like a template.",
+      primaryCta: "Book appointment",
+      secondaryCta: "Ask on WhatsApp",
+      proof: ["4.9 Google rating", "Bridal specialists", "Women-led team", "Open 10 AM - 8 PM"],
+      heroInfo: ["Today’s availability", "Hair spa and facial slots open", "Book haircut, skin care, bridal trials and spa rituals directly on WhatsApp."],
+      metrics: [
+        ["12+", "trained stylists"],
+        ["8 yrs", "beauty experience"],
+        ["2,400+", "happy clients"],
+        ["10-8", "open daily"]
+      ],
+      servicesEyebrow: "Salon menu",
+      servicesTitle: "Premium services with clear packages and starting prices.",
+      servicesText: "Customers can compare treatments quickly, see starting prices and message the salon with confidence.",
+      showcaseEyebrow: "The salon experience",
+      showcaseTitle: "A landing page that makes the salon feel trusted before the first visit.",
+      checklist: [
+        "Bridal, hair, skin and spa services grouped for quick decisions",
+        "Gallery sections for interiors, products, makeup and before-after work",
+        "Direct call, WhatsApp and Google Maps actions for mobile visitors",
+        "Reviews placed before contact so new customers feel safe booking"
+      ],
+      sectionsEyebrow: "What customers need",
+      sectionsTitle: "Built around appointments, trust and visual proof.",
+      features: [
+        ["Stylist Confidence", "Introduce senior stylists, specialties and bridal experience.", "Team ready"],
+        ["Beauty Offers", "Promote glow packages, bridal trials and festive beauty bundles.", "Campaign ready"],
+        ["Booking Details", "Show timings, location, cancellation notes and WhatsApp booking flow.", "Reduces calls"]
+      ],
+      galleryEyebrow: "Salon gallery",
+      galleryTitle: "Show the space, finishes, products and best beauty work.",
+      reviewsTitle: "Client words that make new visitors comfortable booking.",
+      contactEyebrow: "Visit the studio",
+      contactText: "Appointments, walk-ins, bridal trials and beauty consultations available daily.",
+      finalEyebrow: "Salon website preview",
+      finalTitle: "A salon page should feel this polished before a customer ever walks in.",
+      finalText: "Use this as the starting point for a real salon website with actual services, photos, offers, reviews, WhatsApp and Google Maps."
+    }
   },
   cafe: {
     category: "Cafe & Restaurant",
