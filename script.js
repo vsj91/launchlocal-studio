@@ -4,10 +4,10 @@ const estimate = document.querySelector("#estimate");
 const formNote = document.querySelector("#formNote");
 
 const ranges = {
-  1: "$499 - $899",
-  5: "$899 - $1,499",
-  8: "$1,499 - $2,499",
-  12: "$2,500+"
+  standard: "₹6,999",
+  "one-page": "₹6,999",
+  catalog: "₹6,999+",
+  custom: "Custom quote"
 };
 
 function updateEstimate() {
@@ -16,14 +16,14 @@ function updateEstimate() {
 
 function buildMailto(formData) {
   const features = formData.getAll("features").join(", ") || "None selected";
-  const subject = `Website quote request from ${formData.get("business") || "a business"}`;
+  const subject = `Sample website request from ${formData.get("business") || "a local business"}`;
   const body = [
     `Name: ${formData.get("name")}`,
     `Email: ${formData.get("email")}`,
     `Business: ${formData.get("business")}`,
     `Business type: ${formData.get("business_type")}`,
     `Template: ${formData.get("template")}`,
-    `Pages: ${formData.get("pages")}`,
+    `Website type: ${formData.get("pages")}`,
     `Timeline: ${formData.get("timeline")}`,
     `Features: ${features}`,
     "",
@@ -31,7 +31,7 @@ function buildMailto(formData) {
     formData.get("details") || "No details added."
   ].join("\n");
 
-  return `mailto:you@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:hello@launchlocal.studio?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 pagesSelect.addEventListener("change", updateEstimate);
@@ -43,7 +43,7 @@ quoteForm.addEventListener("submit", event => {
 
   event.preventDefault();
   const formData = new FormData(quoteForm);
-  formNote.textContent = "Opening an email draft. Add your real form endpoint or email before publishing.";
+  formNote.textContent = "Opening your email app with the request details.";
   window.location.href = buildMailto(formData);
 });
 

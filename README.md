@@ -1,32 +1,32 @@
 # LaunchLocal Studio
 
-A static GitHub Pages website for a small-business website studio.
+A static GitHub Pages website for selling complete local-business websites in India.
 
 ## What is included
 
-- A polished landing page for selling small-business website packages.
-- A template gallery for cafe, service, and retail websites.
-- A quote request form with dynamic pricing guidance.
-- A no-backend fallback that opens an email draft.
+- A polished landing page for a ₹6,999 complete website offer.
+- Template categories for salons, cafes, clinics, retail shops, tutors, and home services.
+- INR pricing with ₹2,499/year renewal.
+- A request form that opens an email draft with the lead details.
 - Static HTML, CSS, and JavaScript that can run directly on GitHub Pages.
 
-## Quote form setup
+## Lead form setup
 
-GitHub Pages cannot process form submissions by itself. Use a hosted form endpoint such as Formspree, Getform, Basin, or a custom serverless function.
+GitHub Pages cannot process form submissions by itself. The current form uses a `mailto:` fallback in `script.js`.
 
-In `index.html`, find:
+In `script.js`, replace:
 
-```html
-<form class="quote-form" id="quoteForm" action="" method="post">
+```js
+hello@launchlocal.studio
 ```
 
-Replace the empty `action` with your endpoint:
+with the real email address that should receive enquiries.
+
+For a more reliable production form, use a hosted form endpoint such as Formspree, Getform, Basin, or a custom serverless function. In `index.html`, set the form `action`:
 
 ```html
 <form class="quote-form" id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="post">
 ```
-
-In `script.js`, replace `you@example.com` with your email address for the fallback mail draft.
 
 ## Publish with GitHub Pages
 
