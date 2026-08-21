@@ -111,7 +111,7 @@ function renderLayerStage() {
 function renderLayerNav() {
   document.querySelector("#layerNav").innerHTML = theme.layers.map(layer => {
     const [shape, part, section, href] = layer;
-    return `<a href="${href}"><small>${part}</small><strong>${section}</strong></a>`;
+    return `<a class="layer-nav-card" href="${href}"><small>${part}</small><strong>${section}</strong></a>`;
   }).join("");
 }
 
