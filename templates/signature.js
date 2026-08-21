@@ -88,7 +88,7 @@ function openExperience() {
     document.body.classList.add("open");
     document.body.classList.remove("opening");
     document.querySelector("#content").scrollIntoView({ behavior: "smooth", block: "start" });
-  }, 760);
+  }, 920);
 }
 hydrateSignature();
 document.querySelector("#iconTrigger").addEventListener("click", openExperience);
